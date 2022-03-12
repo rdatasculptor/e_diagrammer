@@ -1,6 +1,8 @@
 library(echarts4r)
 library(RColorBrewer)
 
+# define e_charts_diagrammer function that converts nodes and edges dataframe into echarts4r friendly lists 
+
 e_charts_diagrammer <- function(nodes0 = NULL, edges0 = NULL, animationlength = 3000){
   nodeslist <- list()
   for (i in 1:nrow(nodes0)){
@@ -46,6 +48,8 @@ e_charts_diagrammer <- function(nodes0 = NULL, edges0 = NULL, animationlength = 
   return(diagram)
 }
 
+# define nodes 
+
 nodes <- data.frame(name = c("this", "is", "cool!"),
                     x = c(100, 300, 200),
                     y = c(100, 100, 500),
@@ -53,6 +57,9 @@ nodes <- data.frame(name = c("this", "is", "cool!"),
                     symbolSize = c(50, 50, 100),
                     category = c("this...", "is...", "cool!"),
                     label.fontsize = c(20, 20, 40))
+
+# define edges
+
 edges <- data.frame(source = c("this", "is", "cool!", "cool!"),
                     target = c("cool!", "cool!", "this", "is"),
                     edgeSymbol.start = c("circle", "circle", "circle", "circle"),
@@ -64,6 +71,8 @@ edges <- data.frame(source = c("this", "is", "cool!", "cool!"),
                     lineStyle.width = c(5, 5, 10, 5),
                     lineStyle.curveness = c(0, 0.2, 0.8, 0),
                     linestyle.color = c("source","#000", "target", "sourcde"))
+
+# run the e_charts_diagrammer
 
 e_charts_diagrammer(nodes, edges) |>
 e_color(brewer.pal(n = 3, name = "Set3")) |>
