@@ -41,7 +41,7 @@ e_charts_diagrammer <- function(nodes0 = NULL, edges0 = NULL, animationlength = 
     )
   )
   diagram <- 
-    e_charts() %>%
+    e_charts() |>
     e_list(opts)
   return(diagram)
 }
