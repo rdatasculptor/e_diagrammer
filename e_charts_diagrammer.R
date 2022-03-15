@@ -70,7 +70,7 @@ edges <- data.frame(source = c("this", "is", "cool!", "cool!"),
                     label.fontsize = c(20, 20, 20, 20),
                     lineStyle.width = c(5, 5, 10, 5),
                     lineStyle.curveness = c(0, 0.2, 0.8, 0),
-                    linestyle.color = c("source","#000", "target", "sourcde"))
+                    linestyle.color = c("source","#000", "target", "source"))
 
 # run the e_charts_diagrammer
 
